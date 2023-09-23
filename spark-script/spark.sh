@@ -22,14 +22,14 @@ myip() {
 my_ip=$(myip)
 
 # Start the first Spark worker in the background
-bin/spark-class org.apache.spark.deploy.worker.Worker -c 2 -m 5G "spark://$my_ip:7077" &
+bin/spark-class org.apache.spark.deploy.worker.Worker -c 3 -m 6G "spark://$my_ip:7077" &
 
 echo "Spark worker1 added on Spark master standalone ............."
 
 # Start the second Spark worker in the background
-bin/spark-class org.apache.spark.deploy.worker.Worker -c 2 -m 5G "spark://$my_ip:7077" &
+#bin/spark-class org.apache.spark.deploy.worker.Worker -c 2 -m 5G "spark://$my_ip:7077" &
 
-echo "Spark worker2 added on Spark master standalone ............."
+#echo "Spark worker2 added on Spark master standalone ............."
 
 echo "Calling myip function..."
 myip
